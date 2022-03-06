@@ -1,5 +1,6 @@
 async function remove() {
-    var str = { code: "delete from users where name=" + "'" + y + "'" + ";" };
+    var name= "xyz";
+    var str = { code: "delete from users where name=" + "'" + name + "'" + ";" };
     console.log(str);
     const options = {
         method: 'POST',
