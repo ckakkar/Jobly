@@ -8,3 +8,13 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+app.post('/update', (req, res) => {
+  var getUserQuery = req.body.code;
+  console.log(getUserQuery);
+  pool.query(getUserQuery, (error, result) => {
+    if (error)
+      res.end(error);
+    res.sendStatus(200);
+  })
+})
