@@ -81,8 +81,11 @@ app.post('/update', (req, res) => {
 })
 
 //registration code
-app.get('/register',  (req, res) => {
-  res.render('pages/register.ejs')
+// app.get('/register',  (req, res) => {
+//   res.render('pages/register.ejs')
+// })
+app.get('/signup', (req, res) => {
+  res.render('UI/SignUp.ejs')
 })
 app.post('/register', async (req, res) => {//i need to change this so it adds it to the database
   try{
@@ -103,8 +106,11 @@ app.post('/register', async (req, res) => {//i need to change this so it adds it
 
 
 //login code
-app.get('/login2', (req, res) => {
-  res.render('pages/login.ejs')
+// app.get('/login2', (req, res) => {
+//   res.render('pages/login.ejs')
+// })
+app.get('/login', (req, res) => {
+  res.render('UI/LogInPage.ejs')
 })
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/',
@@ -122,12 +128,8 @@ function checkAuthentication(req, res, next){
 app.get('/main', (req, res) => {
   res.render('UI/GRP4.ejs')
 })
-app.get('/signup', (req, res) => {
-  res.render('UI/SignUp.ejs')
-})
-app.get('/login', (req, res) => {
-  res.render('UI/LogInPage.ejs')
-})
+
+
 app.get('/profile', checkAuthentication, (req, res) => {
   res.render('UI/ProfilePage.ejs')
 })
