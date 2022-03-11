@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/logIn.css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Jobly</h1>
+        <br>
+		<p>Let's get you started</p>
+		
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Sign Up</h5>
+		<p>Have an existing account? <a href='/login'>Log In</a> Continue with your progress</p>
+		<form action = "/register" method = "POST">
+		<div class="inputs">
+			<input  id = "name" name = "name" required type="text" placeholder="Name">
+			<br>
+			<input id = "password" name = "password" required type="password" placeholder="Password">
+            <br>
+			<input type="password" placeholder="Re-enter password">
+            <br>
+			<input type="Repassword" placeholder="Tell us something about yourself...">
+		</div>
+			<br><br>
+			<br>
+			<button type = "submit" onclick="window.location.href='/profile';">Sign up</button>
+		</form>	
+	</div>
+	
+</div>  
+
+</body>
+</html>

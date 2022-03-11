@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/logIn.css"/>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Jobly</h1>
+        <br>
+		<p>Don't overcomplicate your life:
+			
+			
+			
+			
+			
+		to move forward, take the first step</p>
+		
+		</div>
+	</div>
+	
+	
+		<div class="right">
+		<h5>Login</h5>
+		<p>Don't have an account? <a href='/signup'>Creat Your Account</a> it takes less than a minute</p>
+		<% if (messages.error) { %>
+			<%= messages.error %>
+		<% } %>
+		<form action = "/login" method = "POST">
+		<div class="inputs">
+			<input id = "name" name = "name" required type="text" placeholder="Name">
+			<br>
+			<input id = "password" name = "password" required type="password" placeholder="Password">
+		</div>
+			<br><br>
+			
+		<div class="remember-me--forget-password">
+				<!-- Angular -->
+	<label>
+		<input type="checkbox" name="item" checked/>
+		<span class="text-checkbox">Remember me</span>
+	</label>
+			<p>forget password?</p>
+		</div>
+			
+			<br>
+			<button type = "submit" onclick="window.location.href='/profile';">Login</button>
+	</div>
+	</form>	
+</div>  
+
+</body>
+</html>

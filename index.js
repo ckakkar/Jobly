@@ -1,5 +1,3 @@
-
-
 const express = require('express')
 const res = require('express/lib/response')
 const path = require('path')
@@ -11,7 +9,7 @@ const session = require('express-session')
 
 const app = express()
 
-//allow app to find to find pages
+//allow app to find to find pages, setup view engine
 app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -19,16 +17,14 @@ app.set('view engine', 'ejs')
 
 
 //passport set up
+//passport setup learned from https://www.youtube.com/watch?v=-RCnNyD0L-s
+//Node.js Passport Login System Tutorial by Web Dev Simplified
+
 const users = []
 const passport = require('passport')
-
-
-
-
 const LocalStrategy = require('passport-local').Strategy
-
 function startPassport(passport, getUserByName, getUserById){
-  const authenticateUser = async (name,password, done) => {
+  const authenticateUser = async (name,password, done) => {//name and password passed in with passport
       const user = getUserByName(name)
       if (user == null){
           return done(null, false, {message: 'No user with that username'})
@@ -40,7 +36,7 @@ function startPassport(passport, getUserByName, getUserById){
               return done(null, false, {message: 'Incorrect password'})
           }
       }catch(e){
-          return done(e)
+          return done(e)//return any errors
       }
   }
   passport.use(new LocalStrategy({ usernameField: 'name'}, authenticateUser))
@@ -53,12 +49,11 @@ function startPassport(passport, getUserByName, getUserById){
 startPassport(
   passport,
   name => users.find(user => user.name === name),
-  id => 
-  users.find(user => user.id === id)
+  id => users.find(user => user.id === id)
 )
 
 
-
+//allow flash to work with session
 app.use(express.urlencoded({extended: false}))
 app.use(flash())
 app.use(session({
@@ -69,9 +64,10 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-//base homepage code
-app.get('/', checkAuthentication, (req, res) => res.render('pages/homepage'))
 
+
+//base homepage code
+app.get('/', checkAuthentication, (req, res) => res.render('UI/ProfilePage.ejs'))
 
 //outdated update code
 app.post('/update', (req, res) => {
@@ -104,8 +100,10 @@ app.post('/register', async (req, res) => {//i need to change this so it adds it
 })
 
 
+
+
 //login code
-app.get('/login', (req, res) => {
+app.get('/login2', (req, res) => {
   res.render('pages/login.ejs')
 })
 app.post('/login', passport.authenticate('local', {
@@ -121,4 +119,18 @@ function checkAuthentication(req, res, next){
   res.redirect('/login')
 }
 
+app.get('/main', (req, res) => {
+  res.render('UI/GRP4.ejs')
+})
+app.get('/signup', (req, res) => {
+  res.render('UI/SignUp.ejs')
+})
+app.get('/login', (req, res) => {
+  res.render('UI/LogInPage.ejs')
+})
+app.get('/profile', checkAuthentication, (req, res) => {
+  res.render('UI/ProfilePage.ejs')
+})
+
+//listen to a port
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
