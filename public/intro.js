@@ -23,9 +23,14 @@ async function go_to_login() {
     else {
         var username = temp.results.rows[0]['name'];
         var type = temp.results.rows[0]['type'];
-        if(type == 0)
+        var preference = temp.results.rows[0]['preference'];
+        if (type == 0)
             go_to_first_login(username);
-        else
-            go_to_userpage(username);
+        else if (type == 1 && preference == 0)
+            location.href = "select_preference.html?" + username;
+        else if (type == 1 && preference == 1)
+            location.href = "user.html?" + username;
+        else if (type==2)
+            location.href = "employer.html?" + username;
     }
 }
