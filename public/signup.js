@@ -32,16 +32,16 @@ async function add_user() {
     }
     else {
         const response = await fetch('/getdata');
-        const temp = await response.json();
+        const data = await response.json();
         var i;
-        for (i = 0; i < temp.results.rows.length; i++) {
-            if (temp.results.rows[i]['name'] == username) {
+        for (i = 0; i < data.results.rows.length; i++) {
+            if (data.results.rows[i]['name'] == username) {
                 warning.innerHTML = "Username already exists";
                 return;
             }
         }
-        for (i = 0; i < temp.results.rows.length; i++) {
-            if (temp.results.rows[i]['email'] == email) {
+        for (i = 0; i < data.results.rows.length; i++) {
+            if (data.results.rows[i]['email'] == email) {
                 warning.innerHTML = "Email already used";
                 return;
             }

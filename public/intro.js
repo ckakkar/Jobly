@@ -14,23 +14,30 @@ function go_to_first_login(username) {
     location.href = "first_login.html?" + username;
 }
 
+
 async function go_to_login() {
     const response = await fetch('/getcurrentuser');
-    const temp = await response.json();
-    if (temp.results.rows.length == 0) {
+    const current_user = await response.json();
+    if (current_user.results.rows.length == 0) {
         location.href = "LogInPage.html";
     }
     else {
-        var username = temp.results.rows[0]['name'];
-        var type = temp.results.rows[0]['type'];
-        var preference = temp.results.rows[0]['preference'];
-        if (type == 0)
+        var username = current_user.results.rows[0]['name'];
+        const response = await fetch('/getdata');
+        const data = await response.json();
+        console.log(data);
+        for (var i = 0; i < data.results.rows.length; i++) {
+            if (data.results.rows[i]['name'] == username) {
+                break;
+            }
+        }
+        if (data.results.rows[i]['type'] == 0)
             go_to_first_login(username);
-        else if (type == 1 && preference == 0)
+        else if (data.results.rows[i]['type'] == 1 && data.results.rows[i]['preference'] == 0)
             location.href = "select_preference.html?" + username;
-        else if (type == 1 && preference == 1)
+        else if (data.results.rows[i]['type'] == 1 && data.results.rows[i]['preference'] == 1)
             location.href = "user.html?" + username;
-        else if (type==2)
+        else if (data.results.rows[i]['type'] == 2)
             location.href = "employer.html?" + username;
     }
 }
