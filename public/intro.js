@@ -39,5 +39,7 @@ async function go_to_login() {
             location.href = "user.html?" + username;
         else if (data.results.rows[i]['type'] == 2)
             location.href = "employer.html?" + username;
+        else if (data.results.rows[i]['type'] == 3)
+            location.href = "admin.html";
     }
 }

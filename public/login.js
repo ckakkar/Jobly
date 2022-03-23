@@ -67,6 +67,8 @@ async function login() {
                 location.href = "user.html?" + username;
             else if (type == 2)
                 location.href = "employer.html?" + username;
+            else if(type==3)
+                location.href = "admin.html";
         }
         else {
             warning.innerHTML = "Wrong password";

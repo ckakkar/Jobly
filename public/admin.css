@@ -1,0 +1,44 @@
+th {
+    font-family: georgia;
+    font-size: 14px;
+    background-color: #dddddd;
+    width: 150px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+td {
+    font-family: georgia;
+    font-size: 14px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#mytable {
+    position: absolute;
+    left: 110px;
+    top: 140px;
+}
+
+.button {
+    background-color: #b51119;
+    color: white;
+    padding: 6px 6px;
+    border: none;
+    border-radius: 2.5px;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: rgb(117, 7, 7);
+}
+
