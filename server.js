@@ -5,10 +5,7 @@ const PORT = process.env.PORT || 3000
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-     ssl: {
-        rejectUnauthorized: false
-    }
+    connectionString: 'postgres://postgres:sarthak0501@localhost/jobly2'
 })
 
 const app = express();
@@ -30,6 +27,16 @@ app.get('/getdata', (req, res) => {
 
 app.get('/getcurrentuser', (req, res) => {
     var getUserQuery = 'SELECT * FROM current';
+    pool.query(getUserQuery, (error, result) => {
+        if (error)
+            res.end(error);
+        var results = { 'rows': result.rows };
+        res.json({ results });
+    })
+})
+
+app.get('/getjobsdata', (req, res) => {
+    var getUserQuery = 'SELECT * FROM jobs';
     pool.query(getUserQuery, (error, result) => {
         if (error)
             res.end(error);
