@@ -13,6 +13,19 @@ async function remove(obj) {
     };
 
     var wait = await fetch('/update', options);
+
+    var clear = { code: "drop table "+name+";" };
+
+    const clear_options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(str),
+    };
+
+    var wait = await fetch('/update', clear_options);
+
     document.location.reload(true);
 }
 
