@@ -13,7 +13,7 @@ async function postjob() {
     var warning = document.getElementById("warning");
 
     if (title == "" || uid == "" || description == "" || responsibilities == "" || city == "" || keywords == "" || qualifications == "")
-        warning.innerHTML = "Please fill all fields;"
+        warning.innerHTML = "Please fill all fields";
     else {
         warning.innerHTML = "\xa0";
 

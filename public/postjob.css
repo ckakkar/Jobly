@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(135deg, #4602ff 10%, #f14ce4 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+}
+
+textarea {
+    overflow: hidden;
+}
+
+#title, #uid, #city {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    position: relative;
+    top: 20px;
+    margin-right: auto;
+    width: 30%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: none;
+    font-size: 16px;
+    resize: none;
+    color: white;
+}
+
+#description, #responsibilities, #qualifications {
+    display: block;
+    margin-left: auto;
+    position: relative;
+    top: 20px;
+    margin-right: auto;
+    width: 70%;
+    height: 350px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: none;
+    font-size: 16px;
+    resize: none;
+    color: white;
+}
+
+#keywords {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    position: relative;
+    top: 20px;
+    margin-right: auto;
+    width: 70%;
+    height: 50px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background: none;
+    font-size: 16px;
+    resize: none;
+    color: white;
+}
+
+.title {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 10px;
+    text-align: center;
+    height: 55px;
+    width: 170px;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    background: none;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+#warning {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    color: rgb(177, 185, 192)
+}

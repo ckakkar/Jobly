@@ -6,33 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="postjob.css">
 </head>
 
 <body>
-    <p>Job Title</p>
+    <p class="title">Job Title</p>
     <textarea id="title" rows="1" cols="100"></textarea>
     <br>
-    <p>Job UID</p>
-    <input type="text" id="uid" placeholder="Choose a unique ID">
+    <p class="title">Job UID</p>
+    <textarea id="uid" placeholder="Create a unique ID"></textarea>
     <br>
-    <p>Description</p>
+    <p class="title">Description</p>
     <textarea id="description" rows="10" cols="100"></textarea>
     <br>
-    <p>Responsibilities</p>
+    <p class="title">Responsibilities</p>
     <textarea id="responsibilities" rows="10" cols="100"></textarea>
     <br>
-    <p>Qualifications</p>
+    <p class="title">Qualifications</p>
     <textarea id="qualifications" rows="10" cols="100"></textarea>
     <br>
-    <p>City</p>
-    <input id="city" type="text">
+    <p class="title">City</p>
+    <textarea id="city"></textarea>
     <br>
-    <p>Keywords</p>
+    <p class="title">Keywords</p>
     <textarea id="keywords" rows="3" cols="100"></textarea>
     <br>
     <p id="warning">&nbsp;</p>
     <br>
     <button type="button" onclick="postjob()">Post Job</button>
+    <br><br><br><br>
     <script src="postjob.js"></script>
 </body>
 

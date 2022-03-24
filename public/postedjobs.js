@@ -36,17 +36,14 @@ async function show_jobs() {
             var cell5 = row.insertCell(-1);
             cell5.innerHTML = data.results.rows[i]['city'];
             var cell6 = row.insertCell(-1);
-            cell6.innerHTML = data.results.rows[i]['keywords'];
-            var cell7 = row.insertCell(-1);
-            cell7.innerHTML = '<button type="button" onclick="remove(this)"> Delete </button>';
+            cell6.innerHTML = '<button type="button" onclick="remove(this)"> Delete </button>';
 
             cell1.classList.add("text");
             cell2.classList.add("text");
             cell3.classList.add("text");
             cell4.classList.add("text");
             cell5.classList.add("text");
-            cell6.classList.add("text");
-            cell7.firstChild.classList.add("button");
+            cell6.firstChild.classList.add("button");
         }
     }
 }

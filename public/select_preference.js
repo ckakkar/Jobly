@@ -22,6 +22,7 @@ async function add_preference() {
     }
 
     //insert preference to table 'username'
+    var warning = document.getElementById("added");
     var pref = document.getElementById("pref").value;
     var str = { code: "insert into " + queryString + " values ('" + pref + "');" };
     const options = {
@@ -33,6 +34,7 @@ async function add_preference() {
     };
 
     var wait = await fetch('/update', options);
+    warning.innerHTML = "Added "+pref;
 }
 
 function continu(){

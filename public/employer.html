@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="employer.css">
+</head>
 </head>
 <body>
-    <button onclick="go_to_postjob()">Post a Job</button>
-    <button onclick="go_to_postedjobs()">See your posted jobs</button>
+    <span class="title" id="welcome"></span>
+    <span class="subtitle">What would you like to do</span>
+    <br>
+    <button id="post" onclick="go_to_postjob()">Post a Job</button>
+    <button id="jobs" onclick="go_to_postedjobs()">Your Jobs</button>
     <script src="employer.js"></script>
 </body>
 </html>

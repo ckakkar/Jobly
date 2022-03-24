@@ -1,44 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(135deg, #4602ff 10%, #f14ce4 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    color: #333333;
+}
+
 th {
-    font-family: georgia;
-    font-size: 14px;
-    background-color: #dddddd;
-    width: 150px;
+    font-size: 16px;
+    background: none;
     padding-left: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
 }
 
 td {
-    font-family: georgia;
     font-size: 14px;
-    text-align: center;
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
 }
 
+#title, #city, #del {
+    width: 150px;
+}
+
+#description {
+    width: 335px;
+}
+
+#resp, #quali {
+    width: 335px;
+}
+
 table, th, td {
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    color: white;
 }
 
 #mytable {
-    position: absolute;
-    left: 110px;
-    top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top:100px;
 }
 
-.button {
-    background-color: #b51119;
-    color: white;
-    padding: 6px 6px;
+button {
+    text-align: center;
+    position: relative;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
     border: none;
-    border-radius: 2.5px;
-    transition-duration: 0.4s;
+    border: 2px solid white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #fff;
+    background: none;
 }
 
-.button:hover {
-    background-color: rgb(117, 7, 7);
+button:hover {
+    background: white;
+    color: black;
 }
-
