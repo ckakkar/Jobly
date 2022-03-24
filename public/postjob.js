@@ -4,6 +4,7 @@ function delay(time) {
 
 async function postjob() {
     var title = document.getElementById("title").value;
+    var uid = document.getElementById("uid").value;
     var description = document.getElementById("description").value;
     var responsibilities = document.getElementById("responsibilities").value;
     var qualifications = document.getElementById("qualifications").value;
@@ -11,17 +12,29 @@ async function postjob() {
     var keywords = document.getElementById("keywords").value;
     var warning = document.getElementById("warning");
 
-    if (title == "" || description == "" || responsibilities == "" || city == "" || keywords == "" || qualifications == "")
+    if (title == "" || uid == "" || description == "" || responsibilities == "" || city == "" || keywords == "" || qualifications == "")
         warning.innerHTML = "Please fill all fields;"
     else {
         warning.innerHTML = "\xa0";
-        title = title.replaceAll("\'","");
-        description = description.replaceAll("\'","");
-        responsibilities = responsibilities.replaceAll("\'","");
-        qualifications = qualifications.replaceAll("\'","");
-        city = city.replaceAll("\'","");
-        keywords = keywords.replaceAll("\'","");
-        var str = { code: "insert into jobs values ('" + queryString + "', '" + title + "', '" + description + "', '" + responsibilities + "', '" + qualifications + "', '" + city + "', '" + keywords + "');" };
+
+        //checking job UID
+        const response = await fetch('/getjobsdata');
+        const data = await response.json();
+        for(var i=0; i<data.results.rows.length; i++){
+            if(uid == data.results.rows[i]['uid']){
+                warning.innerHTML = "Job UID already taken, please choose another";
+                return;
+            }
+        }
+
+        title = title.replaceAll("\'", "");
+        uid = uid.replaceAll("\'", "");
+        description = description.replaceAll("\'", "");
+        responsibilities = responsibilities.replaceAll("\'", "");
+        qualifications = qualifications.replaceAll("\'", "");
+        city = city.replaceAll("\'", "");
+        keywords = keywords.replaceAll("\'", "");
+        var str = { code: "insert into jobs values ('" + queryString + "', '" + title + "', '"+uid+"', '" + description + "', '" + responsibilities + "', '" + qualifications + "', '" + city + "', '" + keywords + "');" };
         const options = {
             method: 'POST',
             headers: {
