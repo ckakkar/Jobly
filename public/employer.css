@@ -57,9 +57,20 @@ button {
     transition: all 0.3s ease;
 }
 
-#jobs {
+#log {
+    position: absolute;
+    left:1270px;
+    top:20px;
+}
+
+#jobs, #log {
     color: #fff;
     background: none;
+}
+
+#log:hover{
+    background: white;
+    color: black;
 }
 
 #jobs:hover {
