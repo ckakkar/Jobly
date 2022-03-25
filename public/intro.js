@@ -14,6 +14,18 @@ function go_to_first_login(username) {
     location.href = "first_login.html?" + username;
 }
 
+function go_to_about(){
+    location.href = "about.html";
+}
+
+function go_to_contact(){
+    location.href = "contact.html";
+}
+
+function go_to_help(){
+    location.href = "help.html";
+}
+
 
 async function go_to_login() {
     const response = await fetch('/getcurrentuser');
