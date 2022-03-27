@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jobly</title>
+    <link rel="stylesheet" href="api.css">
+  </head>
+  <body>
+    <form id="form" action="/getJobs" method="post">
+      <input class="form" id="position" type="text" name="position" value="" placeholder="Position"> <br>
+      <input class="form" id="location" type="text" name="location" value="" placeholder="Location">  <br>
+      <button class = "form" id="submit" type="button" onclick="callApi()" name="button">Search</button>
+    </form>
+      <div id="displayJobs"></div>
+  </body>
+  <script src="api.js"></script>
+</html>
