@@ -20,6 +20,7 @@ async function callApi() {
 }
 
 function displaySingleJob(results, i) {
+  console.log(results);
   if (results.length == 0) {
       document.getElementById('displayJobs').innerHTML = `<div id="jobCard"> No results. Please refine your search <div>`;
       return;
@@ -32,6 +33,15 @@ function displaySingleJob(results, i) {
     }
     if (results[i].company.display_name != undefined) {
       html += `<p id="company"> ${results[i].company.display_name} </p>`
+    }
+    if (results[i].salary_min != undefined && results[i].salary_max != undefined) {
+      html += `<p id "salary"> $${results[i].salary_min} - $${results[i].salary_max} a year </p>`
+    }
+    else if (results[i].salary_min != undefined) {
+      html += `<p id "salary"> $${results[i].salary_min} a year </p>`
+    }
+    else if (results[i].salary_max != undefined) {
+      html += `<p id "salary"> $${results[i].salary_max} a year </p>`
     }
     if (results[i].location.display_name != undefined) {
       html += `<p id="location"> ${results[i].location.display_name} </p>`
