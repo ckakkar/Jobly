@@ -18,8 +18,12 @@ body {
 
 #form {
   text-align: center;
+  margin-top: 30px;
+
 }
+
 .form {
+  font-weight: bold;
   text-align: center;
   border-radius: 5px;
   margin: 5px;
@@ -30,11 +34,71 @@ body {
   width: 200px;
 }
 
-#viewJob {
-  margin-bottom: 30px;
+#jobCard {
+  border: 1px solid white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 20px;
+  color: white;
+  height: 250px;
 }
 
-#displayJobs {
-  margin: 30px;
+#title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#company {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#Location {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+#description {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+#jobCardButtons {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 1px solid white;
+  width: 60%;
+  padding: 20px;
+}
+
+
+#viewJob {
+  font-weight: bold;
   color: white;
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#prevJob {
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#nextJob {
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 5px;
+
 }
