@@ -20,7 +20,7 @@ textarea {
     overflow: hidden;
 }
 
-#title, #uid, #city {
+#title, #uid, #city, #url {
     display: block;
     text-align: center;
     margin-left: auto;

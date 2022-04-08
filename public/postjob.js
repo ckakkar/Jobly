@@ -10,9 +10,10 @@ async function postjob() {
     var qualifications = document.getElementById("qualifications").value;
     var city = document.getElementById("city").value;
     var keywords = document.getElementById("keywords").value;
+    var url = document.getElementById("url").value;
     var warning = document.getElementById("warning");
 
-    if (title == "" || uid == "" || description == "" || responsibilities == "" || city == "" || keywords == "" || qualifications == "")
+    if (title == "" || url == "" || uid == "" || description == "" || responsibilities == "" || city == "" || keywords == "" || qualifications == "")
         warning.innerHTML = "Please fill all fields";
     else {
         warning.innerHTML = "\xa0";
@@ -20,8 +21,8 @@ async function postjob() {
         //checking job UID
         const response = await fetch('/getjobsdata');
         const data = await response.json();
-        for(var i=0; i<data.results.rows.length; i++){
-            if(uid == data.results.rows[i]['uid']){
+        for (var i = 0; i < data.results.rows.length; i++) {
+            if (uid == data.results.rows[i]['uid']) {
                 warning.innerHTML = "Job UID already taken, please choose another";
                 return;
             }
@@ -29,12 +30,13 @@ async function postjob() {
 
         title = title.replaceAll("\'", "");
         uid = uid.replaceAll("\'", "");
+        url = url.replaceAll("\'", "");
         description = description.replaceAll("\'", "");
         responsibilities = responsibilities.replaceAll("\'", "");
         qualifications = qualifications.replaceAll("\'", "");
         city = city.replaceAll("\'", "");
         keywords = keywords.replaceAll("\'", "");
-        var str = { code: "insert into jobs values ('" + queryString + "', '" + title + "', '"+uid+"', '" + description + "', '" + responsibilities + "', '" + qualifications + "', '" + city + "', '" + keywords + "');" };
+        var str = { code: "insert into jobs values ('" + queryString + "', '" + title + "', '" + uid + "', '" + url + "', '" + description + "', '" + responsibilities + "', '" + qualifications + "', '" + city + "', '" + keywords + "');" };
         const options = {
             method: 'POST',
             headers: {
