@@ -1,3 +1,17 @@
+async function logout() {
+    var str = { code: "truncate current;" };
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(str),
+    };
+
+    var wait = await fetch('/update', options);
+    location.href = "index.html";
+}
+
 async function remove(obj) {
     var x = obj.parentNode.parentNode.rowIndex;
     var table = document.getElementById("mytable");
@@ -14,7 +28,7 @@ async function remove(obj) {
 
     var wait = await fetch('/update', options);
 
-    var clear = { code: "drop table "+name+";" };
+    var clear = { code: "drop table " + name + ";" };
 
     const clear_options = {
         method: 'POST',
