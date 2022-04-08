@@ -55,3 +55,14 @@ app.post('/update', (req, res) => {
     })
 })
 
+app.post('/getpref', (req, res) => {
+    var getUserQuery = req.body.code;
+    console.log(getUserQuery);
+    pool.query(getUserQuery, (error, result) => {
+        if (error)
+            res.end(error);
+        var results = { 'rows': result.rows };
+        res.json({ results });
+    })
+})
+
